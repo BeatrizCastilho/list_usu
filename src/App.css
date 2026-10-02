@@ -1,0 +1,1150 @@
+/* =========================================================
+   FLORA - WINX
+   Estilo mágico, floral, delicado e sofisticado
+   ========================================================= */
+
+
+/* =========================================================
+   VARIÁVEIS
+   ========================================================= */
+
+:root {
+    --fundo: #f7f8f4;
+    --fundo-lilas: #f5f1fa;
+    --fundo-verde: #eef4ef;
+
+    --card: #ffffff;
+
+    --lilas: #8d75b5;
+    --lilas-escuro: #6d5598;
+    --lilas-claro: #eee8f6;
+
+    --verde: #7d9d83;
+    --verde-escuro: #58745f;
+    --verde-claro: #e7f0e8;
+
+    --rosa: #c99aa9;
+    --rosa-claro: #f6e9ee;
+
+    --dourado: #c8aa72;
+    --dourado-claro: #f5eedf;
+
+    --texto: #303332;
+    --texto-suave: #777c78;
+
+    --borda: #e4e3e1;
+
+    --erro: #b85e69;
+    --erro-fundo: #fae9ec;
+
+    --sucesso: #55765c;
+    --sucesso-fundo: #e7f1e9;
+
+    --raio: 18px;
+    --raio-pequeno: 11px;
+
+    --sombra:
+        0 8px 28px rgba(72, 60, 85, 0.08);
+
+    --sombra-hover:
+        0 14px 35px rgba(72, 60, 85, 0.13);
+
+    --transicao: 0.25s ease;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    color: var(--texto);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 5% 5%,
+            rgba(141, 117, 181, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 95% 90%,
+            rgba(125, 157, 131, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fafbf8 0%,
+            #f7f5fa 50%,
+            #f5f8f4 100%
+        );
+}
+
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+.app {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding: 40px 22px 70px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.header {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(246, 241, 250, 0.96)
+        );
+
+    border: 1px solid rgba(141, 117, 181, 0.14);
+
+    border-radius: 26px;
+
+    box-shadow: var(--sombra);
+
+    overflow: hidden;
+}
+
+
+/* brilho suave */
+
+.header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    right: 40px;
+
+    background: rgba(125, 157, 131, 0.10);
+
+    border-radius: 50%;
+
+    filter: blur(2px);
+
+    pointer-events: none;
+}
+
+
+/* detalhe floral */
+
+.header::after {
+    content: "✿";
+
+    position: absolute;
+
+    right: 24px;
+    bottom: -24px;
+
+    color: rgba(125, 157, 131, 0.09);
+
+    font-size: 120px;
+
+    pointer-events: none;
+}
+
+
+.header h1 {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    color: var(--lilas-escuro);
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* pequena flor ao lado do título */
+
+.header h1::after {
+    content: "  ❀";
+
+    color: var(--verde);
+
+    font-size: 0.72em;
+}
+
+
+/* =========================================================
+   BARRA DE PESQUISA
+   ========================================================= */
+
+.busca {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+
+    padding: 14px 18px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 14px;
+
+    color: var(--texto);
+
+    font-family: inherit;
+
+    font-size: 0.98rem;
+
+    outline: none;
+
+    transition:
+        border-color var(--transicao),
+        box-shadow var(--transicao),
+        transform var(--transicao);
+}
+
+.busca::placeholder {
+    color: #a1a39f;
+}
+
+.busca:focus {
+    border-color: var(--lilas);
+
+    box-shadow:
+        0 0 0 4px rgba(141, 117, 181, 0.12),
+        0 6px 18px rgba(80, 65, 95, 0.06);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading {
+    text-align: center;
+
+    padding: 60px 0;
+
+    color: var(--texto-suave);
+}
+
+.spinner {
+    width: 45px;
+    height: 45px;
+
+    margin: 0 auto 16px;
+
+    border: 3px solid #e7e3e9;
+
+    border-top-color: var(--lilas);
+
+    border-right-color: var(--verde);
+
+    border-radius: 50%;
+
+    animation: girar 0.9s linear infinite;
+}
+
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   BARRA DA LISTA
+   ========================================================= */
+
+.barra-lista {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 22px 0 16px;
+}
+
+.informacao {
+    margin: 0;
+
+    color: var(--texto-suave);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   ERRO
+   ========================================================= */
+
+.erro {
+    padding: 14px 18px;
+
+    background: var(--erro-fundo);
+
+    border: 1px solid rgba(184, 94, 105, 0.15);
+
+    border-radius: var(--raio-pequeno);
+
+    color: var(--erro);
+
+    font-size: 0.92rem;
+}
+
+
+/* =========================================================
+   SEM RESULTADOS
+   ========================================================= */
+
+.sem-resultados {
+    padding: 55px 20px;
+
+    color: var(--texto-suave);
+
+    text-align: center;
+}
+
+.sem-resultados::before {
+    content: "🌿";
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 28px;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.btn {
+    border: none;
+
+    border-radius: 11px;
+
+    padding: 11px 19px;
+
+    font-family: inherit;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transicao),
+        transform 0.15s ease,
+        box-shadow var(--transicao),
+        opacity var(--transicao);
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   BOTÃO PRINCIPAL - LILÁS FLORA
+   ========================================================= */
+
+.btn-primario {
+    background:
+        linear-gradient(
+            135deg,
+            #9b82c0,
+            #73599f
+        );
+
+    color: white;
+
+    box-shadow:
+        0 6px 16px rgba(115, 89, 159, 0.20);
+}
+
+.btn-primario:hover:not(:disabled) {
+    background:
+        linear-gradient(
+            135deg,
+            #a78dc9,
+            #7c61a8
+        );
+
+    box-shadow:
+        0 9px 22px rgba(115, 89, 159, 0.25);
+}
+
+
+/* =========================================================
+   BOTÃO PERIGO
+   ========================================================= */
+
+.btn-perigo {
+    background: #c97983;
+
+    color: white;
+}
+
+.btn-perigo:hover:not(:disabled) {
+    background: #b8616b;
+
+    box-shadow:
+        0 7px 18px rgba(184, 94, 105, 0.18);
+}
+
+
+/* =========================================================
+   BOTÃO CLARO / VERDE
+   ========================================================= */
+
+.btn-claro {
+    background: var(--verde-claro);
+
+    color: var(--verde-escuro);
+
+    border: 1px solid rgba(125, 157, 131, 0.16);
+}
+
+.btn-claro:hover:not(:disabled) {
+    background: #dce9de;
+
+    box-shadow:
+        0 5px 14px rgba(82, 118, 91, 0.10);
+}
+
+
+/* =========================================================
+   BOTÃO PEQUENO
+   ========================================================= */
+
+.btn-pequeno {
+    padding: 8px 13px;
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   LISTA DE USUÁRIOS
+   ========================================================= */
+
+.lista-usuarios {
+    display: grid;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   CARD DO USUÁRIO
+   ========================================================= */
+
+.card {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 18px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #fdfbfe 100%
+        );
+
+    border: 1px solid var(--borda);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao),
+        border-color var(--transicao);
+}
+
+
+/* detalhe verde muito discreto */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--lilas),
+            var(--verde)
+        );
+
+    opacity: 0;
+
+    transition: opacity var(--transicao);
+}
+
+
+/* pequeno brilho */
+
+.card::after {
+    content: "✦";
+
+    position: absolute;
+
+    right: 18px;
+    top: 12px;
+
+    color: rgba(125, 157, 131, 0.20);
+
+    font-size: 17px;
+
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(141, 117, 181, 0.22);
+
+    box-shadow: var(--sombra-hover);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.card-avatar {
+    position: relative;
+
+    flex-shrink: 0;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #a58ac8,
+            #7560a0
+        );
+
+    border: 3px solid #f0eaf6;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 1.15rem;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 15px rgba(112, 85, 158, 0.20);
+}
+
+
+/* folhinha pequena */
+
+.card-avatar::after {
+    content: "";
+
+    position: absolute;
+
+    right: -1px;
+    bottom: 1px;
+
+    width: 11px;
+    height: 11px;
+
+    background: var(--verde);
+
+    border: 2px solid white;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DO CARD
+   ========================================================= */
+
+.card-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.card-info h3 {
+    margin: 0 0 3px;
+
+    color: #343235;
+
+    font-size: 1.05rem;
+
+    font-weight: 650;
+}
+
+.card-username {
+    margin: 0;
+
+    color: var(--lilas);
+
+    font-size: 0.88rem;
+
+    font-weight: 500;
+}
+
+.card-email {
+    margin: 4px 0 0;
+
+    color: var(--texto-suave);
+
+    font-size: 0.87rem;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   AÇÕES DO CARD
+   ========================================================= */
+
+.card-acoes {
+    display: flex;
+
+    gap: 8px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   FORMULÁRIO DE CADASTRO
+   ========================================================= */
+
+.form-cadastro {
+    position: relative;
+
+    display: grid;
+
+    gap: 17px;
+
+    margin-top: 34px;
+
+    padding: 29px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #faf7fc
+        );
+
+    border: 1px solid rgba(141, 117, 181, 0.15);
+
+    border-radius: 23px;
+
+    box-shadow: var(--sombra);
+
+    overflow: hidden;
+}
+
+
+/* decoração floral grande */
+
+.form-cadastro::before {
+    content: "❀";
+
+    position: absolute;
+
+    right: 10px;
+    top: -35px;
+
+    color: rgba(125, 157, 131, 0.08);
+
+    font-size: 125px;
+
+    pointer-events: none;
+}
+
+
+/* segunda folha */
+
+.form-cadastro::after {
+    content: "❧";
+
+    position: absolute;
+
+    left: -5px;
+    bottom: -18px;
+
+    color: rgba(141, 117, 181, 0.06);
+
+    font-size: 90px;
+
+    transform: rotate(-20deg);
+
+    pointer-events: none;
+}
+
+.form-cadastro h2 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: var(--lilas-escuro);
+
+    font-size: 1.3rem;
+}
+
+.form-cadastro h2::before {
+    content: "✿ ";
+
+    color: var(--verde);
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.campo {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.campo label {
+    color: #686d69;
+
+    font-size: 0.82rem;
+
+    font-weight: 650;
+}
+
+.campo input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 11px;
+
+    color: var(--texto);
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    outline: none;
+
+    transition:
+        border-color var(--transicao),
+        box-shadow var(--transicao),
+        transform var(--transicao);
+}
+
+.campo input::placeholder {
+    color: #aaa9ad;
+}
+
+.campo input:focus {
+    border-color: var(--lilas);
+
+    box-shadow:
+        0 0 0 4px rgba(141, 117, 181, 0.11);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   AVISO DE NOVO USUÁRIO
+   ========================================================= */
+
+.novo-usuario {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 18px;
+
+    padding: 16px 19px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8f2e9,
+            #f1f6f1
+        );
+
+    border: 1px solid rgba(82, 118, 91, 0.12);
+
+    border-radius: var(--raio);
+
+    color: var(--sucesso);
+
+    box-shadow:
+        0 6px 18px rgba(82, 118, 91, 0.06);
+}
+
+.novo-usuario strong {
+    font-weight: 650;
+}
+
+.novo-usuario p {
+    margin: 4px 0 0;
+
+    color: #718075;
+
+    font-size: 0.88rem;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal-fundo {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(48, 42, 55, 0.50);
+
+    backdrop-filter: blur(6px);
+
+    z-index: 100;
+}
+
+.modal-caixa {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 450px;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #faf7fc
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 23px;
+
+    box-shadow:
+        0 25px 70px rgba(47, 39, 57, 0.24);
+
+    animation: aparecerModal 0.25s ease;
+}
+
+
+/* flor do modal */
+
+.modal-caixa::before {
+    content: "✿";
+
+    position: absolute;
+
+    top: 8px;
+    right: 19px;
+
+    color: rgba(141, 117, 181, 0.13);
+
+    font-size: 42px;
+
+    pointer-events: none;
+}
+
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   DETALHES DO USUÁRIO
+   ========================================================= */
+
+.detalhes h2 {
+    margin: 0 0 5px;
+
+    color: var(--lilas-escuro);
+
+    font-size: 1.35rem;
+}
+
+.detalhes-lista {
+    display: grid;
+
+    gap: 0;
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 22px 0;
+}
+
+.detalhes-lista li {
+    padding: 12px 0;
+
+    border-bottom: 1px solid #ece9ee;
+
+    color: var(--texto-suave);
+
+    font-size: 0.92rem;
+}
+
+.detalhes-lista li:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET / DESKTOP
+   ========================================================= */
+
+@media (min-width: 700px) {
+
+    .header {
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: space-between;
+    }
+
+    .header h1 {
+        white-space: nowrap;
+    }
+
+    .busca {
+        max-width: 380px;
+    }
+
+    .form-cadastro {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-cadastro h2,
+    .form-cadastro .btn {
+        grid-column: 1 / -1;
+    }
+
+    .form-cadastro .btn {
+        justify-self: end;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .app {
+        padding: 24px 14px 50px;
+    }
+
+    .header {
+        padding: 23px;
+
+        border-radius: 21px;
+    }
+
+    .header h1 {
+        font-size: 1.55rem;
+    }
+
+    .card {
+        flex-wrap: wrap;
+
+        padding: 16px;
+    }
+
+    .card-acoes {
+        width: 100%;
+    }
+
+    .card-acoes .btn {
+        flex: 1;
+    }
+
+    .form-cadastro {
+        padding: 22px;
+    }
+
+    .novo-usuario {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .novo-usuario .btn {
+        width: 100%;
+    }
+
+    .modal-caixa {
+        padding: 24px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .app {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.35rem;
+    }
+
+    .card-avatar {
+        width: 48px;
+        height: 48px;
+    }
+
+    .card-info h3 {
+        font-size: 0.98rem;
+    }
+
+    .card-email {
+        font-size: 0.82rem;
+    }
+}
